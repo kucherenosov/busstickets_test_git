@@ -1,0 +1,75 @@
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+
+	<!-- ********************************************************************************************************************************-->
+	<!-- ********************************************   GROUPS tables for adddress  *****************************************************-->
+	<!-- ********************************************************************************************************************************-->
+
+	<table name="menu">
+		<column>id</column>
+		<column>link</column>
+		<column>label</column>
+		<row>
+			<value>1</value>
+			<value>welcome.htm</value>
+			<value>Welcome</value>
+		</row>
+		
+		<row>
+			<value>2</value>
+			<value>services.htm</value>
+			<value>Services</value>
+		</row>
+		
+		<row>
+			<value>3</value>
+			<value>photo.htm</value>
+			<value>Photo</value>
+		</row>
+		
+		<row>
+			<value>4</value>
+			<value>news.htm</value>
+			<value>News</value>
+		</row>
+		
+		<row>
+			<value>5</value>
+			<value>about.htm</value>
+			<value>About</value>
+		</row>
+		
+	</table>
+	
+	
+	<table name="news">
+		<column>id</column>
+		<column>title</column>
+		<column>body</column>
+		<row>
+			<value>1</value>
+			<value>news1</value>
+			<value>news body 1</value>
+		</row>
+		
+		<row>
+			<value>2</value>
+			<value>news2</value>
+			<value>news body 2</value>
+		</row>
+		
+		<row>
+			<value>3</value>
+			<value>news4</value>
+			<value>news body 4</value>
+		</row>
+		
+		<row>
+			<value>4</value>
+			<value>news4</value>
+			<value>news body 4</value>
+		</row>
+		
+	</table>
+
+</dataset>

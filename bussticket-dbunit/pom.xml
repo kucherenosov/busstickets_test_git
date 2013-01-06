@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<!-- 
+	<parent>
+    	<groupId>com.saiboten.testapp</groupId>
+    	<artifactId>testapp</artifactId>
+    	<version>1.0-SNAPSHOT</version>
+  	</parent>
+  	-->
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.saiboten.testapp</groupId>
+	<artifactId>bussticket-dbunit</artifactId>
+	<name>bussticket_dbunit</name>
+	<version>1.0-SNAPSHOT</version>
+	<url>http://maven.apache.org</url>
+	
+	<dependencies>
+        <dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+		</dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>test</defaultGoal>
+
+      <plugins>
+        <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>dbunit-maven-plugin</artifactId>
+              <version>1.0-beta-1</version>
+          <dependencies>
+          
+	          <dependency>
+				<groupId>postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>9.1-901.jdbc4</version>
+			</dependency>
+          
+            
+          </dependencies>
+          
+          <!-- common configurations -->
+          <configuration>
+              <!--jar file that has the jdbc driver -->
+              <driver>org.postgresql.Driver</driver>
+              <format>xml</format>
+            <url>jdbc:postgresql://localhost:5432/testdb</url>
+            <username>postgres</username>
+            <password>password</password>
+          </configuration>
+          
+          <executions>
+            <execution>
+              <!-- <phase>test-compile</phase> -->
+              <phase>test</phase>
+              <goals>
+                <goal>operation</goal>
+              </goals>
+              <!-- specific configurations -->
+              <configuration>
+                <type>CLEAN_INSERT</type>
+                <src>src/test/data/dataset.xml</src>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        
+        <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-jar-plugin</artifactId>
+		         <configuration>
+		          <archive>
+		            <manifest>
+		            </manifest>
+		          </archive>
+		        </configuration>
+		    </plugin>
+        
+    </plugins>
+  </build>
+  
+</project>

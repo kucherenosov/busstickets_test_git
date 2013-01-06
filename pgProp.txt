@@ -1,0 +1,7 @@
+superuser: postgres 
+password: password
+port: 5432
+locale: English US
+
+db: testdb
+user: testapp/password
